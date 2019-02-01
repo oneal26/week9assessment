@@ -1,0 +1,25 @@
+
+
+side note, for more practice with git revert i added 
+text - reverted that, then reverted the revert.
+
+EXTRA SIDE NOTE - since it's a static html you need to 
+trick heroku into thinking it's PHP, heroku only deploys 
+APPS. Not static sites. To do so please reference the files
+inside of the "basic" directory.
+
+HOW TO ROLL BACK:
+
+
+1. Add some stuff to the git repo
+    - type code
+    - git add .
+    - git commit -m "adding"
+    - git push origin master
+    - git push heroku master
+2. Boom, change is up there. Live. To revert it go grab 
+the commit ID from your github repo. When you got that, go to your
+terminal and type the following
+    - git revert insertCommitIDHere
+3. Proceed to push that to origin master then to heroku master
+4. Done

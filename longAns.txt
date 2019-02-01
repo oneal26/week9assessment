@@ -1,0 +1,193 @@
+Describe all 4 of the different parts of a MEAN Stack Application, what do they all do and howdo they all work together?
+
+    M = MongoDB
+    E = Express
+    A = Angular
+    N = NodeJS
+
+    With these letters now defined, lemme dive into what each of those does.
+    Mongo is the database, where all of the data is stores. You want to create
+    some objects and persist them? Cool, toss em in MongoDB (most likely with mLab if its live).
+    This lets me segway into the E and A fairly easily. Angular is the front end of the application.
+    AKA what the user interacts with to create objects and get them ready to be sent to Mongo. But Angular 
+    can't communicate directly to Mongo, it needs Express. Express is what you use to build out the back end
+    of the app, allowing the front end (angular) to create an object and pass it through express to mongo. This also allows
+    the user to pull the data back out by acting as an API! Pretty cool. NodeJS is what makes all of the backend javascript work.
+    A majority of Express is written in JS, and Angular is prodominately TypeScript which is a variant of JS.
+    NodeJS (npm - node package manager) is what allows all of this to run smoothly.
+
+
+
+
+Explain the MVC relationship and how it works in Spring Boot, how is the whole system set up?
+
+    M = Model
+    V = View
+    C = Controller
+
+    With this said, in Spring Boot you create Java Classes for each the M, V, and C and 
+    utilize things like JPA, H2, Web, ect. to tell your app which Java Class should be 
+    treated as the model, the view, or the controller. The Controller is what does the routing
+    from page to page. The views are the actual html pages. The Model is what defines the data
+    that is being created and passed into the DataBase. Woo!
+
+Explain Git/GitHub and why we use it to a 7-year-old
+
+    Git/GitHub is like a piece of paper your teacher has given you
+    for a group project. You and your group have to write the final
+    project on that one peice of paper, but if you want to brainstorm
+    you can make a copy of that paper you have all written on and make 
+    notes on your copy. 
+
+Explain what Jenkins is and why we use it?
+    *Make sure to explain all the parts associated with Jenkins.
+    *Explain what is meant by job, build, build step, etc.
+
+    Jenkins is a tool for automating the Builds of your projects. By 
+    linking it to a github repo, you can let Jenkins automatically build
+    the project everytime you push changes to github. This allows the team
+    to make sure all changes that have been added are functional and don't 
+    make the code explode! You can also link Artifactory to it to make sure
+    it can reference all of the "Artifacts" that the project needs to be successfully
+    built(node modules are heavyyyy). A Build is the project being ran, if there are no errors in the code
+    it will be a success! If it fails that means the latest code pushed and used to build
+    is what made it blow up. 
+    also - Master and Agents nodes are important. Master is like the manager
+    and the agent helps take care of some of the masters work. this allows us to 
+    distribute the different build environments we need. This allows for the work 
+    to be spread out to multiple agents and for us to run the same test case and 
+    code on different environments in parallel.
+
+
+Explain a typical CI/CD pipeline, to a manager with no development experience.
+
+    CI is focuses more on ensuring any code deployed is going to function.
+    Since you (manager) have no coding experience i would say it like this.
+    CI is like if you bought groceries you're used to buying, and the only time
+    you got different groceries is when you referenced a recipe before heading
+    to the store and read tons of reviews, etc. ensuring you would enjoy and finish
+    the new groceries you've decided to add in to your diet. 
+    CD if more like seeing a recipe on buzzfeed and being like "Dang, that's a cool
+    Salmon Volcano. I think everyone will love to see me make this." And heading immediately to
+    grab the salmon/ingredients from the store without seeing if the store even carries sushi 
+    grade fish. I'm so bad at these questions:/.
+
+Give a description of each of 3 of the following environments:
+    Development Environment
+    Testing Environment
+    Staging Environment
+    Production Environment
+    
+    - 
+
+    - Test Environment consists of elements that support test execution 
+    with software, hardware and network configuration. Test environment 
+    configuration must mimic the production environment in order to uncover 
+    any environment/configuration related issues. It is the combination of 
+    hardware and software environment on which the tests will be executed. 
+    It includes hardware configuration, operating system settings, software 
+    configuration, test terminals and other support to perform the test.
+
+    - A staging environment (stage) is a nearly exact replica of a production environment 
+    for software testing. Staging environments are made to test codes, builds, and updates 
+    to ensure quality under a production-like environment before application deployment. 
+    The staging environment requires a copy of the same configurations of hardware, servers, 
+    databases, and caches. Everything in a staging environment should be as close a copy to 
+    the production environment as possible to ensure the software works correctly. 
+
+    - 
+
+
+
+Explain to a 6th grader what Artifactory is and the role it plays in our CI/CD workflow
+    Highlight steps for setting up Artifactory in a project
+    
+    Artifactory is like a gameboy! You have alot of toys at home. You like
+    to play with those toys. BUT you can't take all them with you go out to 
+    school! So you get a GameBoy (artifactory). You have a TON of games for it that you
+    love to play (the artifacts) and this way you can play games without having to bring your
+    toys everywhere!
+
+
+When using Heroku, explain the "behind the scenes magic" is going on?
+    Give a detailed breakdown of what parts of deployment Heroku handles for you
+
+
+    Heroku does a lot. Heroku is a cloud-based service that offers a 
+    single platform to configure, deploy, run, and, most importantly, 
+    scale web applications. What this means is that when you give heroku
+    an app, it is storing it and running it from the cloud, mainting the server, 
+    assigning it an IP, and even listening for updates from you (if you run git push 
+    heroku master). Theres a lot more it does though, before it can even assign your app
+    an IP address, it has to obtain an allotted amount of space where it can store the app's files,
+    obtain IP address to be able to asign them, and also make sure the dev has the ability
+    to horizontally scale. Meaning if many people are hitting the site, in order to run cleaner servers
+    you create more servers. All the same content, just different portals if you will. But to even do 
+    this requires heroku to set up an IP with a certain CIDR behind the scenes. something like 10.0.0.0/16.
+
+
+
+
+Give an in-depth explanation on how you check to make sure that Jenkins is secured
+
+
+    You should lock down the access to Jenkins UI so that users are authenticated 
+    and appropriate set of permissions are given to them. This setting is 
+    controlled mainly by two axes. Security Realm, which determines users and their 
+    passwords, as well as what groups the users belong to. And Authorization Strategy, 
+    which determines who has access to what. These two axes are orthogonal, and need to 
+    be individually configured. For example, you might choose to use external LDAP or 
+    Active Directory as the security realm, and you might choose "everyone full access 
+    once logged in" mode for authorization strategy. Or you might choose to let Jenkins 
+    run its own user database, and perform access control based on the permission/user matrix.
+    If you do not turn on security, anyone may create, modify, or even delete 
+    Jenkins projects. If security is on, only the administrator may modify Jenkins 
+    projects, but developers lose the ability to force rebuilds.
+
+
+Explain to a beginner developer how to create a pipeline in a typical pipeline structure
+    -Steps
+        1. Create a project / link it to GitHub
+        2. Login to Jenkins and click create new item
+        3. Select Freestyle
+        4. From General, mark the "GitHub Project" box
+            - Paste in github project's url
+        5. On Source Code Management Tab, select Git
+            - Paste in github project's url
+        6. If you need to connect to Artifactory head to Build Envirmonment
+        and select the appropriate "projectTypeHere-Artifactory Integration"
+        7. Click Save
+        8. Click Build Now
+
+
+Describe two types of deployment (the more detail the better)
+
+    CI = Continous Integration
+    CD = Continous deployment
+
+    With this being said, the two share a common ground yet are fairly different.
+    A pipeline utilizing CI is going to ensure each chunk of code is tested before going live.
+    This allows the dev's to be a bit more worry free, due to the stress that can come 
+    from using CD. CD typically focuses on moving at a faster pace, delivering more noticable changes
+    for the client and not testing until deployment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public String howTiredIsReed(){
+    return "really tired. Like crazy tired.";
+}
+
+println(howTiredIsReed());
+

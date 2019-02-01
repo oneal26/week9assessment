@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/styling :: head-style">
+</head>
+<body>
+
+	<h1>Hello</h1>
+
+	
+
+
+
+
+
+
+	
+	<div class="container-fluid result">
+    <div class="header">
+  		<h1>HRDB</h1>
+  	</div>
+  
+  	<div id="main-text">
+  		<img src="https://cdn0.iconfinder.com/data/icons/harmonicons-02/64/check-circle-512.png" height="100" width="100"/>
+  		<h2>Thank you!</h2>
+    	<h3>You Have Successfully Updated Your Account</h3>	  
+  	</div>
+  	<div id="container"> 
+  		<h4>We have the following information:</h4>
+      	<p>
+      		<b>First Name:</b> <span th:text="${user.firstName}"></span>
+      	</p>
+      	<p>
+        	<b>Last Name:</b> <span th:text="${user.lastName}"></span>
+      	</p>
+      	<p>
+       		<b>Address:</b> <span th:text="${user.address}"></span>
+      	</p>
+      	<p>
+        	<b>Age:</b> <span th:text="${user.age}"></span>
+      	</p>
+      	
+		<!--Style tag button  -->
+		<div id=press>
+			<a href="../" >
+      			<button class="btn btn-primary">Done</button>
+      		</a>
+		</div>
+      	<!-- Bootstrap button -->
+      	<!-- <a href="../index" class="btn btn-primary">Done</a> -->
+      	
+	</div>
+
+
+
+
+
+
+
+
+
+<div th:replace="fragments/styling :: body-links">
+</div>
+</body>
+
+</html>

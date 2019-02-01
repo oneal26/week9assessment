@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/styling :: head-style">
+</head>
+<body>
+
+	<div th:replace="fragments/navbar :: navbar">
+	</div>
+	
+	<div class="container-fluid">
+	<center>
+	<h1>Hello</h1>
+	<h3>Welcome to make a user. you make users. you view users. thats about it. have fun!</h3>
+	
+
+	<h1>Here are all of our users first names!</h1>
+	<div th:each="user : ${users}">
+	<div class="jumbotron">
+	<h3>User's First Name: <span th:text="${user.firstName}"></span>!</h3>
+	</div>
+	</div>
+	</center>
+
+
+
+
+
+	</div>
+
+
+<div th:replace="fragments/styling :: body-links">
+</div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+
+<div class="container-fluid">
+
+  <div class="jumbotron">
+   
+    <h1>Welcome to the Donut Shoppe!</h1>
+
+  </div>
+
+  <div class="jumbotron">
+   
+      <h1>What we have in stock!</h1>
+  
+      <div class="card w-25" *ngFor="let donut of donutList.reverse()">
+        <div class="card-body">
+          <div class="picBox" *ngIf="donut.icing.toUpperCase().includes('VANILLA') && donut.sprinkles.toUpperCase().includes('NONE')">
+              <img class="donutPic" src="assets/vanilla.PNG">
+          </div>
+          <div class="picBox" *ngIf="donut.icing.toUpperCase().includes('VANILLA') && !donut.sprinkles.toUpperCase().includes('NONE')">
+              <img class="donutPic" src="assets/vanillaSprinkles.PNG">
+          </div>
+          <div class="picBox" *ngIf="donut.icing.toUpperCase().includes('CHOCOLATE') && donut.sprinkles.toUpperCase().includes('NONE')">
+              <img class="donutPic" src="assets/chocolate.PNG">
+          </div>
+          <div class="picBox" *ngIf="donut.icing.toUpperCase().includes('CHOCOLATE') && !donut.sprinkles.toUpperCase().includes('NONE')">
+              <img class="donutPic" src="assets/chocolateSprinkles.PNG">
+          </div>
+          <div class="picBox" *ngIf="!donut.icing.toUpperCase().includes('CHOCOLATE') && !donut.icing.toUpperCase().includes('VANILLA') && donut.sprinkles.toUpperCase().includes('NONE')">
+              <img class="donutPic" src="assets/random.PNG">
+          </div>
+          <div class="picBox" *ngIf="!donut.icing.toUpperCase().includes('CHOCOLATE') && !donut.icing.toUpperCase().includes('VANILLA') && !donut.sprinkles.toUpperCase().includes('NONE')">
+              <img class="donutPic" src="assets/randomSprinkles.PNG">
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+</div>

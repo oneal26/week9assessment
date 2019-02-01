@@ -1,0 +1,202 @@
+What is the purpose of the "main" method in the Java program?
+	
+	A main method is what tells the program what to fire off 
+	first and where to start. You only have one per app.
+
+
+
+Do the following code:
+
+	*Create a HashMap (with at least 10 pieces of information)
+	*Iterate over HashMap and take the values from the HashMap and transfer the information into two Arrays
+	*Transfer the Array information into an ArrayList
+	
+		HashMap<String, Integer> person = new HashMap<>();
+		person.put("Jenni", 26);
+		person.put("Jaden", 20);
+		person.put("Reed", 22);
+		person.put("Eric", 100);
+		person.put("Dave", 54);
+		person.put("Sam", 25);
+		person.put("Chris", 22);
+		person.put("Smithy", 100);
+		person.put("Duke", 54);
+		person.put("Bo", 25);
+	
+		String personName[] = new String[10];
+		int personAge[] = new int[10];
+		
+		
+		
+		int i=0;
+		
+		for(Map.Entry<String, Integer> entry : person.entrySet()) {
+		
+			
+			String key = entry.getKey();
+			int value = entry.getValue();
+			
+			personName[i] = key;
+			personAge[i] = value;
+			
+			System.out.println(key + ": " + value);
+			System.out.println(personName[i]);
+			System.out.println(personAge[i]);
+			
+			i++;
+	
+		}
+			
+		
+		System.out.println("People's names in an Array: " + Arrays.toString(personName));
+		System.out.println("People's ages in an Array: " + Arrays.toString(personAge));
+			
+		ArrayList<String> nameList = new ArrayList<>();
+		ArrayList<Integer> ageList = new ArrayList<>();
+		
+		for(i = 0; i < personName.length; i++) {
+			nameList.add(personName[i]);
+			ageList.add(personAge[i]);
+		}
+		
+		System.out.println("Names put into an ArrayList: " + nameList);
+		System.out.println("Ages put into an ArrayList: " + ageList);
+
+
+	
+
+
+Create a custom class with 5 methods
+
+
+	public class Car {
+		
+		
+		
+		
+		public String make;
+		public String model;
+		public int year;
+		public Boolean freshTires;
+		public Boolean freshOil;
+		public int mileage;
+			
+		
+		public Car() {
+			
+		}
+		
+		public Car(String insertMake, String insertModel, int insertYear, Boolean addTires, Boolean addOil, int currentMileage) {
+			make = insertMake;
+			model = insertModel;
+			year = insertYear;
+			freshTires = addTires;
+			freshOil = addOil;
+			mileage = currentMileage;
+			
+			
+			if(this.mileage > 10000) {
+				this.freshTires = false;
+				this.freshOil = false;
+			}
+		}
+		
+		
+		
+		public void setMake(String newMake) {
+			make = newMake;
+		}
+			
+		public void setModel(String newModel) {
+			model = newModel;
+		}
+			
+		public void setYear(int newYear) {
+			year = newYear;
+		}
+		
+			
+		public void changeTires() {
+			freshTires = true;
+		}
+		
+		public void changeOil() {
+			freshOil = true;
+		}
+		
+		
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			
+			Car myCar = new Car("Toyota", "Corolla", 2012, true, true, 12000);
+
+		
+			System.out.println(myCar.freshOil);
+			System.out.println(myCar.freshTires);
+			myCar.changeOil();
+			myCar.changeTires();
+			System.out.println(myCar.freshOil);
+			System.out.println(myCar.freshTires);
+
+		}
+		
+	
+			
+	}
+
+
+
+What is the difference between Horizontal and Vertical scaling?
+
+	Horizontal scaling means that you scale by adding more machines. 
+	Vertical scaling means that you scale by adding more power to an 
+	existing machine.
+
+What are Virtual Machines and why do we use them?
+
+	Virtual machines are basically a virtual computer inside of
+	your computer. This is handy because it gives you the ability
+	to test on multiple OS's without them interfering with
+	each other. Also you can create multiple instances of an OS 
+	to test your stuff on.
+
+Name the stages a Standard Jenkins pipeline needs to include
+
+	- Development Environment
+    - Testing Environment
+    - Staging Environment
+    - Production Environment
+
+
+
+Name 3 Useful Plugins Associated with Jenkins
+
+	- Artifactory PlugIn
+	- GitHub Branch Source
+	- PowerShell PlugIn
+
+
+How does Jenkins notify you when your build is successful? 
+	*When your build is unsuccessful?
+
+		There will be a blue circle if the build is successful.
+		There will be a red circle if it is not successful.
+		The build history displays as weather, if there have been 
+		no failures it will appear as Sunshine.
+
+	
+
+Give some examples of Network Bottlenecks
+
+	Deployment has been a huge Bottleneck in the past, with all of 
+	the faster languages like ruby or python devs were able to Create
+	and update code quickly however, until Heroku, they hit a bottleneck
+	when it came down to deploying it.
+
+
+
+
+
+
+
+

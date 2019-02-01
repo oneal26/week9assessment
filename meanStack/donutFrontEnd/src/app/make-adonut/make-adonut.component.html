@@ -1,0 +1,27 @@
+<div class="card w-50">
+  <div class="card-header">
+    <h3>Select Ingredients</h3>
+  </div>
+  <div class="card-body">
+<form>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Dough</label>
+          <input type="text" name="dough" id="dough" class="form-control" [(ngModel)]="newDonut.dough" placeholder="Dough...">
+        </div>
+      </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Icing</label>
+        <input type="text" name="icing" id="icing" class="form-control" [(ngModel)]="newDonut.icing" placeholder="Icing...">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Sprinkles</label>
+      <input type="text" name="sprinkles" id="sprinkles" class="form-control" [(ngModel)]="newDonut.sprinkles" placeholder="Sprinkles...">
+    </div>
+    
+    <button routerLink="/" type="submit" class="btn btn-primary" (click)="create()">Fry!</button>
+  </form>
+</div>
+</div>

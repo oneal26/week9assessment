@@ -1,0 +1,20 @@
+
+[15 Points] Create a Step-by-Step Guide on Creating a Master-Agent Architecture in Jenkins
+    *Make sure to include any tips on trouble shooting
+
+I understood this question to mean how does the Master/Agent Node connection work and how 
+do you set up a permanent agent.
+
+Master connects to slave using the standard SSH protocol.
+
+1. Go to Manage Jenkins
+2. Go to Manage Nodes 
+3. Select New Node 
+4. Give it a Name and Select Permanent Agent
+5. Hit Okay
+6. Launch Method: 
+    - Launch Agent Via Java Web Start
+7. Disable WorkDIR
+8. Select Save
+9. Click on the Node
+10. Select Launch
