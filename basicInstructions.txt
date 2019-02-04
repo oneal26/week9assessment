@@ -1,0 +1,25 @@
+(Side note) Must have a JSON file present for heroku to accept the app as an app.
+I don't know PHP honestly, but I found this method and it worked when I recreated it. If I had to explain it I would say the PHP file is simply referencing the home.html so that the app can access it as a route.
+
+1. Create files.
+
+2. push folder to git
+	-Git init
+	-Git add .
+	-Git remote add origin <gitRepoUrl>
+	-Git push origin master
+
+3. Push to heroku
+	-Heroku create appNameHere
+	-Git push heroku master
+4. To revert find the git commit ID you want to revert, then type git revert <commit ID>
+
+THIS IS GOING TO OPEN VIM - CHILLLLL
+
+5. Press i
+
+6. Type commit message about reverting commit
+
+7. Hit Esc
+
+8. Type :wq hit enter boom outta vim and you've reverted the commit.
